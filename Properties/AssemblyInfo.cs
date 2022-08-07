@@ -35,7 +35,7 @@ using MelonLoader;
 [assembly: AssemblyVersion(ModInfo.Version)]
 [assembly: AssemblyFileVersion(ModInfo.Version)]
 
-[assembly: MelonInfo(typeof(CVR.PlayerList.ModMain), ModInfo.Name, ModInfo.Version, ModInfo.Author, ModInfo.Download)]
+[assembly: MelonInfo(typeof(CVR.PlayerListMod.ModMain), ModInfo.Name, ModInfo.Version, ModInfo.Author, ModInfo.Download)]
 [assembly: MelonGame("Alpha Blend Interactive", "ChilloutVR")]
 [assembly: MelonPlatformDomain(MelonPlatformDomainAttribute.CompatibleDomains.MONO)]
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CVR.PlayerList
+namespace CVR.PlayerListMod
 {
   public class ModMain : MelonMod {
     public override void OnApplicationStart() {
