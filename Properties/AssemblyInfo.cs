@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using MelonLoader;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
@@ -35,10 +35,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion(ModInfo.Version)]
 [assembly: AssemblyFileVersion(ModInfo.Version)]
 
+[assembly: MelonInfo(typeof(CVR.PlayerList.ModMain), ModInfo.Name, ModInfo.Version, ModInfo.Author, ModInfo.Download)]
+[assembly: MelonGame("Alpha Blend Interactive", "ChilloutVR")]
+[assembly: MelonPlatformDomain(MelonPlatformDomainAttribute.CompatibleDomains.MONO)]
+
 internal static class ModInfo {
   public const string Name = "CVR.PlayerList";
   public const string Author = "yamiM0NSTER";
   public const string Version = "0.1.0";
+  public const string Download = "https://github.com/yamiM0NSTER/CVR.PlayerList";
 }
-
-// TODO: Add MelonLoader attributes
