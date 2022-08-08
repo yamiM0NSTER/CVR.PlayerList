@@ -13,11 +13,11 @@ namespace CVR.PlayerListMod.Components {
     }
 
     private void Start() {
-      StartCoroutine(AssetBundleLoader.Co_LoadBundle(Resources.Resources.playerlistmod, new Action<AssetBundle>(Test)));
+      StartCoroutine(AssetBundleLoader.Co_LoadBundle(Resources.Resources.playerlistmod, new Action<AssetBundle>(OnAssetBundleLoaded)));
     }
 
     const string assetPath = "Assets/Prefabs/PlayerListMod.prefab";
-    void Test(AssetBundle assetBundle) {
+    void OnAssetBundleLoaded(AssetBundle assetBundle) {
       var prefab = assetBundle.LoadAsset<GameObject>(assetPath);
       _playerList = UnityEngine.Object.Instantiate(prefab, gameObject.transform);
       _playerList.AddComponent<PlayerList>();
