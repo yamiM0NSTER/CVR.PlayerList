@@ -15,7 +15,7 @@ namespace CVR.PlayerListMod {
       Instance = this;
       LoggerInstance.Msg("Hello");
 
-      HarmonyInstance.PatchAll();
+      //HarmonyInstance.PatchAll();
     }
   }
 }
