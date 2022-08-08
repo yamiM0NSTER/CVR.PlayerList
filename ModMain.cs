@@ -14,8 +14,8 @@ namespace CVR.PlayerListMod {
     public override void OnApplicationStart() {
       Instance = this;
       LoggerInstance.Msg("Hello");
-      Patches.CVR_MenuManager.Patch();
-      Patches.CVRPlayerManager.Patch();
+
+      HarmonyInstance.PatchAll();
     }
   }
 }
