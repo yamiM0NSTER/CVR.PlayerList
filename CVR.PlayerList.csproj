@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ChilloutVR\ChilloutVR_Data\Managed\Cohtml.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="DarkRift, Version=2.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ChilloutVR\ChilloutVR_Data\Managed\DarkRift.dll</HintPath>
+    </Reference>
     <Reference Include="MelonLoader">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ChilloutVR\MelonLoader\MelonLoader.dll</HintPath>
     </Reference>
@@ -65,8 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\PlayerList.cs" />
+    <Compile Include="Events\Players.cs" />
     <Compile Include="Events\QuickMenu.cs" />
     <Compile Include="ModMain.cs" />
+    <Compile Include="Patches\CVRPlayerManager.cs" />
     <Compile Include="Patches\CVR_MenuManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resources.Designer.cs">

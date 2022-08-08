@@ -1,4 +1,5 @@
-﻿using MelonLoader;
+﻿using ABI_RC.Core.Player;
+using MelonLoader;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,11 +29,15 @@ namespace CVR.PlayerListMod.Components {
     void SubscribeToEvents() {
       Events.QuickMenu.OnQuickMenuClose += OnQuickMenuClose;
       Events.QuickMenu.OnQuickMenuOpen += OnQuickMenuOpen;
+      Events.Players.OnRemotePlayerJoin += OnPlayerJoin;
+      Events.Players.OnRemotePlayerLeave += OnPlayerLeave;
     }
 
     void UnsubscribeFromEvents() {
       Events.QuickMenu.OnQuickMenuClose -= OnQuickMenuClose;
       Events.QuickMenu.OnQuickMenuOpen -= OnQuickMenuOpen;
+      Events.Players.OnRemotePlayerJoin -= OnPlayerJoin;
+      Events.Players.OnRemotePlayerLeave -= OnPlayerLeave;
     }
 
     void OnDestroy() {
@@ -45,6 +50,17 @@ namespace CVR.PlayerListMod.Components {
 
     void OnQuickMenuClose() {
       _gameObject.SetActive(false);
+    }
+
+    Dictionary<string, CVRPlayerEntity> _players = new Dictionary<string, CVRPlayerEntity>();
+    void OnPlayerJoin(CVRPlayerEntity player) {
+      _players.Add(player.Uuid, player);
+      _logger.Msg($"[Join] Player: {player.Username}[{player.Uuid}]");
+    }
+
+    void OnPlayerLeave(string playerId) {
+      _players.Remove(playerId);
+      _logger.Msg($"[Leave] Player: {playerId}");
     }
   }
 }
