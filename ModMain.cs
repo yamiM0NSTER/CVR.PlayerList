@@ -15,6 +15,7 @@ namespace CVR.PlayerListMod {
       Instance = this;
       LoggerInstance.Msg("Hello");
       Patches.CVR_MenuManager.Patch();
+      Patches.CVRPlayerManager.Patch();
     }
   }
 }
