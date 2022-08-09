@@ -13,9 +13,6 @@ namespace CVR.PlayerListMod {
 
     public override void OnApplicationStart() {
       Instance = this;
-      LoggerInstance.Msg("Hello");
-
-      //HarmonyInstance.PatchAll();
     }
   }
 }
