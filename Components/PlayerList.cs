@@ -39,18 +39,18 @@ namespace CVR.PlayerListMod.Components {
     }
 
     void SubscribeToEvents() {
-      Events.QuickMenu.OnQuickMenuClose += OnQuickMenuClose;
-      Events.QuickMenu.OnQuickMenuOpen += OnQuickMenuOpen;
-      Events.Players.OnRemotePlayerJoin += OnPlayerJoin;
-      Events.Players.OnRemotePlayerLeave += OnPlayerLeave;
+      Events.QuickMenu.QuickMenuClosed += OnQuickMenuClose;
+      Events.QuickMenu.QuickMenuOpened += OnQuickMenuOpen;
+      Events.Players.RemotePlayerJoined += OnPlayerJoin;
+      Events.Players.RemotePlayerLeft += OnPlayerLeave;
       NetworkManager.Instance.GameNetwork.Disconnected += OnDisconnected;
     }
 
     void UnsubscribeFromEvents() {
-      Events.QuickMenu.OnQuickMenuClose -= OnQuickMenuClose;
-      Events.QuickMenu.OnQuickMenuOpen -= OnQuickMenuOpen;
-      Events.Players.OnRemotePlayerJoin -= OnPlayerJoin;
-      Events.Players.OnRemotePlayerLeave -= OnPlayerLeave;
+      Events.QuickMenu.QuickMenuClosed -= OnQuickMenuClose;
+      Events.QuickMenu.QuickMenuOpened -= OnQuickMenuOpen;
+      Events.Players.RemotePlayerJoined -= OnPlayerJoin;
+      Events.Players.RemotePlayerLeft -= OnPlayerLeave;
       NetworkManager.Instance.GameNetwork.Disconnected -= OnDisconnected;
     }
 

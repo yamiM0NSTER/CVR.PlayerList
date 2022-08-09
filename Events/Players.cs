@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace CVR.PlayerListMod.Events {
   internal class Players {
-    public static event Action<CVRPlayerEntity> OnRemotePlayerJoin;
-    public static event Action<string> OnRemotePlayerLeave;
+    public static event Action<CVRPlayerEntity> RemotePlayerJoined;
+    public static event Action<string> RemotePlayerLeft;
 
     public static void RemotePlayerJoin(CVRPlayerEntity player) {
-      OnRemotePlayerJoin?.Invoke(player);
+      RemotePlayerJoined?.Invoke(player);
     }
 
     public static void RemotePlayerLeave(string playerId) {
-      OnRemotePlayerLeave?.Invoke(playerId);
+      RemotePlayerLeft?.Invoke(playerId);
     }
   }
 }

@@ -34,13 +34,13 @@ namespace CVR.PlayerListMod.Components {
     }
 
     void SubscribeToEvents() {
-      Events.Players.OnRemotePlayerJoin += OnPlayerJoin;
-      Events.Players.OnRemotePlayerLeave += OnPlayerLeave;
+      Events.Players.RemotePlayerJoined += OnPlayerJoin;
+      Events.Players.RemotePlayerLeft += OnPlayerLeave;
     }
 
     void UnsubscribeFromEvents() {
-      Events.Players.OnRemotePlayerJoin -= OnPlayerJoin;
-      Events.Players.OnRemotePlayerLeave -= OnPlayerLeave;
+      Events.Players.RemotePlayerJoined -= OnPlayerJoin;
+      Events.Players.RemotePlayerLeft -= OnPlayerLeave;
     }
 
     void OnPlayerJoin(CVRPlayerEntity player) {
