@@ -22,6 +22,7 @@ namespace CVR.PlayerListMod.Patches {
         __state = __instance.NetworkPlayers.Count;
       }
 
+      // This is highly susceptible to breaking
       static void Postfix(ref PlayerManager __instance, int __state, Message message) {
         if(__state == __instance.NetworkPlayers.Count) {
           return;
